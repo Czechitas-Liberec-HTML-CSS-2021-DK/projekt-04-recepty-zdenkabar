@@ -1,0 +1,168 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, ::after, ::before { box-sizing: inherit; }
+
+
+/* -------------------------------------------------- */
+
+/*
+pouzivame mobile first pristup
+tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni
+s pribyvajici sirkou pridavame media query pro
+středně široké obrazovky:
+@media (min-width: 480px) {
+}
+široké obrazovky
+@media (min-width: 860px) {
+}
+*/
+
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.paticka {
+    text-align: center;
+    font-size: 14px;
+    color: silver;
+}
+
+.paticka a {
+    color: silver;
+}
+
+
+/* ------------------------------- */
+/* ----- DOLE BUDE TVOJE CSS ----- */
+/* ------------------------------- */
+
+p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: white;
+}
+
+h1 {
+    font-weight: 800;
+    font-family: "Raleway";
+    font-size: 1.75rem;
+    color: white;
+    position: absolute;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-weight: 800;
+    font-family: "Raleway";
+    font-size: 1.2rem;
+    color: white;
+}
+
+.kontejner {
+    display: flex;
+    flex-direction: column;
+}
+
+.hlavni {
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    bottom: 0.5rem;
+}
+
+h2 {
+    position: absolute;
+    bottom: 0.5rem;
+}
+.recept {
+    position: relative;
+    margin: 0;
+    padding:0.5rem;
+}
+
+.radek {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.hlavni {
+    background-image: url(images/burger.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 200px;
+}
+
+.maly {
+    min-height: 90px;
+    display: flex;
+}
+
+.druhy {
+    background-image: url(images/sushi.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.treti {
+    background-image: url(images/rajcata.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.ctvrty {
+    background-image: url(images/kure.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.paty {
+    background-image: url(images/grilovani.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+/*tablet*/
+@media (min-width: 480px) {
+    h1 {font-size: 2rem;};
+    h2 {font-size: 1.5rem;};
+    .hlavni {min-height: 250px;}
+    .male {
+        display: flex; 
+        flex-grow: 1;
+        flex-direction: row;
+        flex-wrap: wrap;}
+    .maly {min-height: 150px;
+        flex-basis: 50%;
+        justify-content: space-around;
+        display: flex; 
+        flex-direction: column;}
+    .radek {display: flex;
+        justify-content: space-between;}
+}
+
+/*PC*/
+@media (min-width: 860px) 
+{
+    h1 {font-size: 3rem;}
+    h2 {font-size: 1.75rem;}
+    .kontejner {flex-direction: row;}
+    .hlavni {min-height: 400px;}
+    .hlavni {flex-basis: 33.3333%;}
+    .male {flex-basis: 66.6666%;}
+    .maly {min-height: 200px;
+        justify-content: space-around;
+    }
+    .recept {padding:1.25rem;}
+}
